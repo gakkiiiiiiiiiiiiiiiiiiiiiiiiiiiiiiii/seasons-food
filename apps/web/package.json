@@ -9,7 +9,8 @@
     "build:mp-weixin": "uni build -p mp-weixin",
     "preview": "vite preview --host 0.0.0.0",
     "test:h5": "playwright test -c playwright.config.js",
-    "test:mp-weixin": "cross-env VITE_TEST_FIXTURES=true UNI_PLATFORM=mp-weixin jest -i -c jest.config.cjs"
+    "test:mp-weixin": "cross-env VITE_TEST_FIXTURES=true UNI_PLATFORM=mp-weixin jest -i -c jest.config.cjs",
+    "test:mp-weixin:prod": "cross-env UNI_PLATFORM=mp-weixin jest -i -c jest.config.cjs"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-alpha-5010220260604001",

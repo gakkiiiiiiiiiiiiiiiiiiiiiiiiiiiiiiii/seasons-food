@@ -1101,16 +1101,16 @@ async function loadProduce() {
   loading.value = true
   error.value = ''
 
-  const params = new URLSearchParams({
+  const params = {
     month: String(activeMonth.value),
     category: 'all',
     availability: 'mature',
     region: activeRegionName.value
-  })
-  if (query.value.trim()) params.set('q', query.value.trim())
+  }
+  if (query.value.trim()) params.q = query.value.trim()
 
   try {
-    const { data, statusCode } = await requestApi(`/api/produce?${params}`)
+    const { data, statusCode } = await requestApi(`/api/produce?${toQueryString(params)}`)
     if (statusCode < 200 || statusCode >= 300) throw new Error('produce api failed')
     produce.value = (data.items || []).map(normalizeProduce)
   } catch {
@@ -1122,13 +1122,20 @@ async function loadProduce() {
 
 async function loadAllProduce() {
   try {
-    const params = new URLSearchParams({ category: 'all', availability: 'mature', region: activeRegionName.value })
+    const params = toQueryString({ category: 'all', availability: 'mature', region: activeRegionName.value })
     const { data, statusCode } = await requestApi(`/api/produce?${params}`)
     if (statusCode < 200 || statusCode >= 300) throw new Error('all produce api failed')
     allProduce.value = (data.items || []).map(normalizeProduce)
   } catch {
     allProduce.value = []
   }
+}
+
+function toQueryString(params) {
+  return Object.entries(params)
+    .filter(([, value]) => value !== undefined && value !== null && value !== '')
+    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+    .join('&')
 }
 
 function normalizeProduce(item) {

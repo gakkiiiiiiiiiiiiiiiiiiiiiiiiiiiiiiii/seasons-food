@@ -16,6 +16,18 @@ describe('mp-weixin smoke', () => {
     expect(await seasonName.text()).toContain('芒种')
   })
 
+  it('renders produce data from the active API source', async () => {
+    await page.callMethod('selectTab', 'category')
+    await page.waitFor('.category-page', 10000)
+    await page.waitFor('.category-list button', 30000)
+
+    const errorState = await page.$('.error-state')
+    expect(errorState).toBeFalsy()
+
+    const categoryItems = await page.$$('.category-list button')
+    expect(categoryItems.length).toBeGreaterThan(0)
+  })
+
   it('switches to the category tab', async () => {
     await page.callMethod('selectTab', 'category')
     await page.waitFor('.category-page', 10000)
