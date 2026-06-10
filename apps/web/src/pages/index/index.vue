@@ -1804,6 +1804,10 @@ function selectTab(value, event) {
   if (value === 'ranking') animateRankingList()
 }
 
+defineExpose({
+  selectTab
+})
+
 function handleScrollPage(event) {
   scrollPageTop.value = event.detail?.scrollTop || event.currentTarget?.scrollTop || 0
 }

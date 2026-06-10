@@ -5,13 +5,13 @@ module.exports = {
   testTimeout: 120000,
   testEnvironmentOptions: {
     platform: 'mp-weixin',
-    compile: true,
+    compile: false,
     host: '127.0.0.1',
     timeout: 120000,
     silent: false,
     'mp-weixin': {
       launch: false,
-      port: 19420,
+      port: 19421,
       args: ['--trust-project']
     }
   }

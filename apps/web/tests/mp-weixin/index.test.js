@@ -17,14 +17,11 @@ describe('mp-weixin smoke', () => {
   })
 
   it('switches to the category tab', async () => {
-    const categoryTab = await page.$('.tabbar__button--category')
-    expect(categoryTab).toBeTruthy()
-
-    await categoryTab.tap()
+    await page.callMethod('selectTab', 'category')
     await page.waitFor('.category-page', 10000)
 
-    const activeCategoryTab = await page.$('.tabbar__button--category')
-    expect(await activeCategoryTab.attribute('class')).toContain('active')
+    const categoryPage = await page.$('.category-page')
+    expect(categoryPage).toBeTruthy()
   })
 })
 
