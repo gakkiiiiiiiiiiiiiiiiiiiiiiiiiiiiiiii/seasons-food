@@ -456,17 +456,12 @@
         <Icon icon="solar:alt-arrow-down-linear" />
       </button>
 
-      <view v-if="!detailSlug" class="tabbar">
-        <button
-          v-for="tab in tabs"
-          :key="tab.value"
-          :class="[`tabbar__button--${tab.value}`, { active: activeTab === tab.value }]"
-          @click="event => selectTab(tab.value, event)"
-        >
-          <Icon :icon="tab.icon" />
-          <text>{{ tab.label }}</text>
-        </button>
-      </view>
+      <TabBar
+        v-if="!detailSlug"
+        :tabs="tabs"
+        :active-tab="activeTab"
+        @select="selectTab"
+      />
     </view>
 
     <ChoiceSheet
@@ -2038,6 +2033,21 @@ const ProduceCard = defineComponent({
         h('p', { class: 'card-reason-tag' }, props.item.reason)
       ])
     ])
+  }
+})
+
+const TabBar = defineComponent({
+  props: ['tabs', 'activeTab'],
+  emits: ['select'],
+  setup(props, { emit }) {
+    return () => h('view', { class: 'tabbar' }, props.tabs.map(tab => h('view', {
+      key: tab.value,
+      class: ['tabbar-item', `tabbar__button--${tab.value}`, { active: props.activeTab === tab.value }],
+      onClick: () => emit('select', tab.value)
+    }, [
+      h(Icon, { icon: tab.icon }),
+      h('text', tab.label)
+    ])))
   }
 })
 

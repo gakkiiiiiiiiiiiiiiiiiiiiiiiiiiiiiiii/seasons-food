@@ -1,5 +1,3 @@
-@import url("https://fontsapi.zeoseven.com/928/main/result.css");
-
 :root {
   font-family: "Gen Jyuu Gothic Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "MiSans", "OPPO Sans", sans-serif;
   --ink-strong: #1e332c;
@@ -30,10 +28,6 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
@@ -138,7 +132,7 @@ button {
 .detail-page-copy > *,
 .variety-photo-list view,
 .ranking-category-toggle,
-.tabbar button {
+.tabbar-item {
   will-change: transform, opacity;
 }
 
@@ -2359,7 +2353,7 @@ image.produce-preview-image {
   backdrop-filter: blur(16px);
 }
 
-.tabbar button {
+.tabbar-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2374,12 +2368,12 @@ image.produce-preview-image {
     transform 0.18s ease;
 }
 
-.tabbar button.active {
+.tabbar-item.active {
   color: color-mix(in srgb, var(--season-ink) 68%, var(--season-primary));
   font-weight: 950;
 }
 
-.tabbar button:hover {
+.tabbar-item:hover {
   transform: translateY(-1px);
 }
 

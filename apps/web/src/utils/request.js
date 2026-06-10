@@ -6,9 +6,13 @@ export function initCloudContainer() {
   // #ifdef MP-WEIXIN
   const cloud = getWeixinCloud()
   if (cloud?.init) {
-    cloud.init({
-      env: WX_CLOUD_ENV
-    })
+    try {
+      cloud.init({
+        env: WX_CLOUD_ENV
+      })
+    } catch (error) {
+      console.warn('WeChat cloud container init skipped:', error)
+    }
   }
   // #endif
 }
