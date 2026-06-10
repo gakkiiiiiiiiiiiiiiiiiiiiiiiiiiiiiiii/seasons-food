@@ -1,0 +1,35 @@
+.DS_Store
+node_modules/
+dist/
+apps/web/dist/
+apps/web/node_modules/
+
+.env
+.env.*
+!.env.example
+*.local
+apps/api/.wxcloud.env
+apps/api/db/*.sqlite
+apps/api/db/*.sqlite-*
+apps/api/generated/
+
+*.log
+npm-debug.log*
+
+# Build/export artifacts
+*.zip
+
+# Design and crawling review artifacts kept outside source control
+/*-contact-sheet.jpg
+/*-review.jpg
+/*-audit.jpg
+/*-audit.png
+/ai-*.png
+/category-page-screenshot.png
+/fruit-all-missing-final.jpg
+/vegetable-existing-candidates.jpg
+/preview-category-audit.json
+apps/api/data/audit-sheets/
+apps/api/data/*contact-sheet*.jpg
+apps/api/data/*candidates*.json
+apps/api/data/*candidates*.txt

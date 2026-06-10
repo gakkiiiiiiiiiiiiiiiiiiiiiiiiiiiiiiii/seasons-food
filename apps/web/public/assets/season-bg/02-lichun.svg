@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512" fill="none">
+  <defs>
+    <radialGradient id="s02-lichun-svg-glow" cx="70%" cy="40%" r="52%">
+      <stop offset="0" stop-color="#8FE6BC" stop-opacity=".46"/>
+      <stop offset=".48" stop-color="#C07DBB" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#F3F9F0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="s02-lichun-svg-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="s02-lichun-svg-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".95" numOctaves="3" seed="31"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .08"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="s02-lichun-svg-stroke" x1="460" y1="80" x2="930" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17243F" stop-opacity=".72"/>
+      <stop offset=".45" stop-color="#6CB3C7" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#C07DBB" stop-opacity=".54"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="512" fill="url(#s02-lichun-svg-glow)" opacity=".86"/>
+  <g opacity=".98" transform="translate(-156 -54) scale(1.22)"><path d="M530 410 C610 376 704 382 772 420 C838 458 910 452 964 414" stroke="#E3C5A7" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+    <path d="M548 432 C628 408 712 414 788 444 C858 472 914 464 960 440" stroke="#8FE6BC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.28"/>
+      <path d="M576 386 C654 286 734 220 888 150" stroke="url(#s02-lichun-svg-stroke)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.52"/>
+      <path d="M640 326 C712 316 770 284 832 222" stroke="#6CB3C7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.38"/>
+      <g transform="translate(642 306) scale(1)">
+    <ellipse cx="0" cy="-20" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(0)"/>
+    <ellipse cx="21" cy="-4" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(58)"/>
+    <ellipse cx="13" cy="22" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(136)"/>
+    <ellipse cx="-13" cy="22" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(224)"/>
+    <ellipse cx="-21" cy="-4" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(302)"/>
+    <ellipse cx="0" cy="2" rx="10" ry="10" fill="#F5B65B" opacity="0.86" />
+  </g><g transform="translate(742 248) scale(0.9)">
+    <ellipse cx="0" cy="-20" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(0)"/>
+    <ellipse cx="21" cy="-4" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(58)"/>
+    <ellipse cx="13" cy="22" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(136)"/>
+    <ellipse cx="-13" cy="22" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(224)"/>
+    <ellipse cx="-21" cy="-4" rx="15" ry="26" fill="#C07DBB" opacity="0.72" transform="rotate(302)"/>
+    <ellipse cx="0" cy="2" rx="10" ry="10" fill="#F5B65B" opacity="0.86" />
+  </g><g transform="translate(846 178) scale(0.95)">
+    <ellipse cx="0" cy="-20" rx="15" ry="26" fill="#F7B7C8" opacity="0.72" transform="rotate(0)"/>
+    <ellipse cx="21" cy="-4" rx="15" ry="26" fill="#F7B7C8" opacity="0.72" transform="rotate(58)"/>
+    <ellipse cx="13" cy="22" rx="15" ry="26" fill="#F7B7C8" opacity="0.72" transform="rotate(136)"/>
+    <ellipse cx="-13" cy="22" rx="15" ry="26" fill="#F7B7C8" opacity="0.72" transform="rotate(224)"/>
+    <ellipse cx="-21" cy="-4" rx="15" ry="26" fill="#F7B7C8" opacity="0.72" transform="rotate(302)"/>
+    <ellipse cx="0" cy="2" rx="10" ry="10" fill="#F5B65B" opacity="0.86" />
+  </g>
+      <g transform="translate(698 292) rotate(26) scale(0.44)">
+    <path d="M0 0 C42 -42 88 -42 118 0 C83 30 40 34 0 0Z" fill="#8FE6BC" opacity="0.5"/>
+    <path d="M10 -1 C44 0 75 0 110 0" stroke="#17243F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.34"/>
+  </g><g transform="translate(792 228) rotate(-18) scale(0.4)">
+    <path d="M0 0 C42 -42 88 -42 118 0 C83 30 40 34 0 0Z" fill="#BEEA86" opacity="0.5"/>
+    <path d="M10 -1 C44 0 75 0 110 0" stroke="#17243F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.34"/>
+  </g></g>
+  <rect width="1024" height="512" filter="url(#s02-lichun-svg-grain)" opacity=".58"/>
+</svg>

@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-06-04T13:55:48.394Z",
+  "total": 86,
+  "byCategory": {
+    "fruit": 39,
+    "vegetable": 47
+  },
+  "bySubCategory": {
+    "fruit:tropical": 12,
+    "fruit:stone-fruit": 6,
+    "fruit:pome": 4,
+    "fruit:berry": 9,
+    "fruit:melon": 3,
+    "fruit:citrus": 4,
+    "fruit:tuber": 1,
+    "vegetable:leafy-green": 11,
+    "vegetable:cruciferous": 5,
+    "vegetable:stem": 2,
+    "vegetable:allium": 2,
+    "vegetable:legume": 2,
+    "vegetable:pod": 3,
+    "vegetable:tuber": 3,
+    "vegetable:aquatic": 5,
+    "vegetable:flower": 3,
+    "vegetable:mushroom": 7,
+    "vegetable:herb": 4
+  },
+  "sourceLinks": 86,
+  "exactSourceHits": 5,
+  "searchFallbacks": 81,
+  "exactSourceHitRate": 0.058,
+  "errors": []
+}

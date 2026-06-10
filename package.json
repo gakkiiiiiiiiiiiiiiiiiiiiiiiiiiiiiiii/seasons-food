@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @inseason/web",
+    "dev:web": "npm run dev --workspace @inseason/web",
+    "dev:api": "npm run dev --workspace @inseason/api",
+    "build": "npm run build --workspace @inseason/web",
+    "db:seed": "npm run db:seed --workspace @inseason/api",
+    "data:crawl": "npm run data:crawl --workspace @inseason/api",
+    "data:validate": "npm run data:validate --workspace @inseason/api",
+    "nutrition:usda": "npm run nutrition:usda --workspace @inseason/api --",
+    "images:crawl": "npm run images:crawl --workspace @inseason/api --",
+    "images:unsplash": "npm run images:unsplash --workspace @inseason/api --",
+    "api:start": "npm run start --workspace @inseason/api"
+  }
+}

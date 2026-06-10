@@ -1,0 +1,6 @@
+interface:
+  display_name: "Produce AI Asset Sprites"
+  short_description: "Batch AI produce sprites for this app"
+  default_prompt: "Use $produce-ai-asset-sprites to generate and apply AI sprite-sheet produce assets for this project."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,445 @@
+.page {
+  min-height: 100vh;
+}
+
+.content {
+  padding: 44rpx 32rpx 152rpx;
+}
+
+.search {
+  height: 86rpx;
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  padding: 0 28rpx;
+  color: #77867c;
+  background: rgba(255, 253, 247, 0.84);
+  border: 2rpx solid rgba(226, 205, 177, 0.84);
+  border-radius: 999rpx;
+}
+
+.search input {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.search__icon {
+  font-size: 42rpx;
+}
+
+.category-tabs,
+.ranking-category {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10rpx;
+  margin-top: 20rpx;
+  padding: 8rpx;
+  background: rgba(255, 253, 247, 0.76);
+  border: 2rpx solid rgba(226, 205, 177, 0.8);
+  border-radius: 36rpx;
+}
+
+.ranking-category {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.category-tabs__button,
+.ranking-category button {
+  height: 66rpx;
+  color: #718078;
+  border-radius: 28rpx;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.category-tabs__button.active,
+.ranking-category button.active {
+  color: #2d7457;
+  background: rgba(232, 244, 207, 0.88);
+  border: 2rpx solid rgba(143, 195, 111, 0.8);
+}
+
+.category-tabs__button--fruit.active,
+.ranking-category button.fruit.active {
+  color: #c7673f;
+  background: rgba(255, 239, 226, 0.9);
+  border-color: rgba(231, 156, 108, 0.7);
+}
+
+.filter-pill,
+.province-picker__value {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 22rpx;
+  padding: 18rpx 28rpx;
+  color: #25584a;
+  background: rgba(255, 253, 247, 0.84);
+  border: 2rpx solid rgba(226, 205, 177, 0.84);
+  border-radius: 999rpx;
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.season-card,
+.origin-panel,
+.province-card,
+.ranking-list,
+.group-card {
+  margin-top: 24rpx;
+  padding: 28rpx;
+  background: rgba(255, 253, 247, 0.78);
+  border: 2rpx solid rgba(226, 205, 177, 0.82);
+  border-radius: 28rpx;
+  box-shadow: 0 16rpx 40rpx rgba(83, 62, 35, 0.06);
+}
+
+.season-card {
+  min-height: 170rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(244, 252, 236, 0.9), rgba(255, 253, 247, 0.7));
+}
+
+.season-card__label {
+  padding: 12rpx 24rpx;
+  color: #2d7457;
+  border: 2rpx solid rgba(143, 195, 111, 0.56);
+  border-radius: 999rpx;
+  font-weight: 900;
+}
+
+.season-card__title {
+  display: block;
+  color: #2d7457;
+  font-size: 64rpx;
+  font-weight: 950;
+}
+
+.season-card__copy {
+  color: #386d5a;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18rpx;
+  margin-top: 24rpx;
+}
+
+.produce-card,
+.province-card__item,
+.ranking-row {
+  min-height: 128rpx;
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  padding: 18rpx;
+  color: #264f42;
+  background: rgba(255, 253, 247, 0.78);
+  border: 2rpx solid rgba(226, 205, 177, 0.82);
+  border-radius: 24rpx;
+  text-align: left;
+}
+
+.produce-card.fruit,
+.province-card__item.fruit {
+  border-color: rgba(231, 156, 108, 0.52);
+}
+
+.produce-card__badge {
+  width: 58rpx;
+  height: 58rpx;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #4b9660;
+  border-radius: 50%;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.fruit .produce-card__badge {
+  background: #c7673f;
+}
+
+.produce-card__body {
+  min-width: 0;
+  flex: 1;
+}
+
+.produce-card__name,
+.ranking-row__name {
+  display: block;
+  color: #203a32;
+  font-size: 32rpx;
+  font-weight: 950;
+}
+
+.produce-card__meta,
+.ranking-row__meta,
+.province-card__meta {
+  display: block;
+  margin-top: 6rpx;
+  color: #7b897f;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.produce-card__tag {
+  display: inline-flex;
+  margin-top: 10rpx;
+  padding: 6rpx 14rpx;
+  color: #c7673f;
+  background: rgba(255, 238, 224, 0.72);
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  font-weight: 800;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  color: #25584a;
+  font-size: 44rpx;
+  font-weight: 950;
+}
+
+.page-title__icon {
+  color: #3f8f79;
+  font-size: 40rpx;
+}
+
+.province-picker {
+  margin-left: auto;
+}
+
+.origin-panel {
+  min-height: 320rpx;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.origin-panel__map {
+  color: #3f8f79;
+  font-size: 42rpx;
+  font-weight: 950;
+}
+
+.origin-panel__hint {
+  max-width: 460rpx;
+  color: #7b897f;
+  font-size: 24rpx;
+  line-height: 1.55;
+}
+
+.province-card__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.province-card__title {
+  display: block;
+  color: #25584a;
+  font-size: 56rpx;
+  font-weight: 950;
+}
+
+.province-card__note {
+  color: #4b9660;
+  font-size: 26rpx;
+  font-weight: 900;
+  text-align: right;
+}
+
+.province-card__items,
+.group-card__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+  margin-top: 22rpx;
+}
+
+.group-list {
+  display: grid;
+  gap: 18rpx;
+}
+
+.group-card__head {
+  display: flex;
+  justify-content: space-between;
+  color: #25584a;
+  font-size: 32rpx;
+  font-weight: 950;
+}
+
+.group-card__item {
+  padding: 14rpx 16rpx;
+  color: #386d5a;
+  background: rgba(255, 255, 255, 0.62);
+  border-radius: 18rpx;
+  font-size: 26rpx;
+  font-weight: 800;
+}
+
+.nutrient-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10rpx;
+  margin-top: 20rpx;
+}
+
+.nutrient-tabs__button {
+  min-height: 72rpx;
+  color: #7d897f;
+  background: rgba(255, 253, 247, 0.78);
+  border: 2rpx solid rgba(226, 205, 177, 0.82);
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.nutrient-tabs__button.active {
+  color: #2d7457;
+  background: rgba(232, 244, 207, 0.88);
+  border-color: rgba(143, 195, 111, 0.8);
+}
+
+.ranking-list {
+  display: grid;
+  gap: 16rpx;
+}
+
+.ranking-row {
+  display: grid;
+  grid-template-columns: 62rpx 1fr auto;
+}
+
+.ranking-row__rank {
+  width: 56rpx;
+  height: 56rpx;
+  display: grid;
+  place-items: center;
+  color: #b8832e;
+  background: #eef8d8;
+  border-radius: 50%;
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.ranking-row__rank--1 {
+  background: #fff0ad;
+}
+
+.ranking-row__rank--2 {
+  background: #edf3f8;
+}
+
+.ranking-row__rank--3 {
+  background: #fde5cf;
+}
+
+.ranking-row__value {
+  color: #49a998;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.tabbar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  height: 128rpx;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 12rpx 18rpx calc(12rpx + env(safe-area-inset-bottom));
+  background: rgba(255, 253, 248, 0.96);
+  border-top: 2rpx solid rgba(226, 205, 177, 0.72);
+  border-radius: 44rpx 44rpx 0 0;
+  box-shadow: 0 -20rpx 46rpx rgba(83, 62, 35, 0.08);
+}
+
+.tabbar__button {
+  display: grid;
+  place-items: center;
+  color: #7b897f;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.tabbar__button.active {
+  color: #2b8a78;
+  font-weight: 950;
+}
+
+.tabbar__icon {
+  font-size: 36rpx;
+}
+
+.detail-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: flex-end;
+  background: rgba(35, 44, 38, 0.28);
+}
+
+.detail-sheet {
+  width: 100%;
+  max-height: 70vh;
+  padding: 34rpx 34rpx calc(34rpx + env(safe-area-inset-bottom));
+  background: #fffdf7;
+  border-radius: 40rpx 40rpx 0 0;
+}
+
+.detail-sheet__head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-sheet__title {
+  display: block;
+  color: #203a32;
+  font-size: 44rpx;
+  font-weight: 950;
+}
+
+.detail-sheet__meta,
+.detail-sheet__copy {
+  display: block;
+  color: #708176;
+  font-size: 26rpx;
+  line-height: 1.6;
+}
+
+.detail-sheet__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin: 24rpx 0;
+}
+
+.detail-sheet__tags text {
+  padding: 8rpx 18rpx;
+  color: #c7673f;
+  background: rgba(255, 238, 224, 0.78);
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.detail-sheet__section {
+  display: block;
+  margin-top: 22rpx;
+  color: #25584a;
+  font-size: 30rpx;
+  font-weight: 950;
+}

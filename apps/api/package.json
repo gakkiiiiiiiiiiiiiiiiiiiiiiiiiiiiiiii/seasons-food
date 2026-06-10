@@ -1,0 +1,32 @@
+{
+  "name": "@inseason/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:seed": "node scripts/seed.js",
+    "images:crawl": "node scripts/crawl-real-images.js",
+    "images:unsplash": "node scripts/crawl-unsplash-images.js",
+    "images:ai:missing": "node scripts/list-missing-ai-images.js",
+    "images:ai:agnes": "node scripts/generate-agnes-ai-images.js",
+    "images:season:agnes": "node scripts/generate-agnes-season-backgrounds.js",
+    "images:varieties:agnes": "node scripts/generate-agnes-variety-images.js",
+    "images:varieties:clean-bg": "node scripts/remove-variety-checker-backgrounds.js",
+    "images:ai:apply-sprite": "node scripts/apply-ai-sprite.js",
+    "images:ai:transparent-bg": "node scripts/remove-ai-white-backgrounds.js",
+    "images:ai:agnes:clean-bg": "node scripts/remove-agnes-checker-backgrounds.js",
+    "images:preview:apply-sprite": "node scripts/apply-preview-sprite.js",
+    "images:preview:sprite-manifest": "node scripts/build-preview-sprite-manifest.js",
+    "images:preview:transparent-bg": "node scripts/remove-preview-white-backgrounds.js",
+    "data:crawl": "node scripts/crawl-produce-data.js",
+    "data:fruit-varieties": "node scripts/supplement-fruit-varieties.js",
+    "nutrition:usda": "node scripts/enrich-usda-nutrition.js",
+    "data:validate": "node scripts/validate-data-assets.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  }
+}

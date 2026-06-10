@@ -1,0 +1,17 @@
+page {
+  min-height: 100%;
+  background: linear-gradient(180deg, #fff9e8 0%, #f0f8ec 100%);
+  color: #274d42;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+}
+
+button {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  line-height: 1.2;
+}
+
+button::after {
+  border: 0;
+}

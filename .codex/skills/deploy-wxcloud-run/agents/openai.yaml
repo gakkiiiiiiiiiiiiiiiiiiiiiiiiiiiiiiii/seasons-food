@@ -1,0 +1,4 @@
+interface:
+  display_name: "部署微信云托管"
+  short_description: "初始化后端并生成微信云托管部署脚本"
+  default_prompt: "Use $deploy-wxcloud-run to 初始化微信云托管 for this backend project."

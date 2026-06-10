@@ -1,0 +1,633 @@
+{
+  "generatedAt": "2026-06-10T10:48:47.265Z",
+  "total": 168,
+  "byCategory": {
+    "fruit": 74,
+    "vegetable": 94
+  },
+  "bySubCategory": {
+    "fruit:berry": 17,
+    "fruit:tropical": 21,
+    "fruit:stone-fruit": 12,
+    "fruit:pome": 9,
+    "fruit:melon": 6,
+    "vegetable:gourd": 6,
+    "vegetable:legume": 6,
+    "vegetable:leafy-green": 16,
+    "vegetable:fruit-vegetable": 4,
+    "vegetable:pod": 4,
+    "fruit:citrus": 8,
+    "vegetable:cruciferous": 9,
+    "vegetable:root": 6,
+    "vegetable:mushroom": 11,
+    "vegetable:grain": 1,
+    "vegetable:allium": 6,
+    "vegetable:herb": 5,
+    "vegetable:tuber": 4,
+    "vegetable:stem": 6,
+    "vegetable:aquatic": 6,
+    "vegetable:flower": 4,
+    "fruit:tuber": 1
+  },
+  "realImageCoverage": {
+    "withRealImage": 80,
+    "missingRealImage": 88,
+    "coverageRate": 0.476
+  },
+  "aiImageCoverage": {
+    "withAiImage": 168,
+    "missingAiImage": 0,
+    "coverageRate": 1
+  },
+  "previewImageCoverage": {
+    "withPreviewImage": 168,
+    "missingPreviewImage": 0,
+    "coverageRate": 1
+  },
+  "missingRealImages": [
+    {
+      "slug": "xiancai",
+      "name": "苋菜",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "chengzi",
+      "name": "橙子",
+      "category": "fruit",
+      "subCategory": "citrus"
+    },
+    {
+      "slug": "bocai",
+      "name": "菠菜",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "lianou",
+      "name": "莲藕",
+      "category": "vegetable",
+      "subCategory": "root"
+    },
+    {
+      "slug": "mizi",
+      "name": "蜜枣",
+      "category": "fruit",
+      "subCategory": "stone-fruit"
+    },
+    {
+      "slug": "ganju",
+      "name": "柑橘",
+      "category": "fruit",
+      "subCategory": "citrus"
+    },
+    {
+      "slug": "jiucai",
+      "name": "韭菜",
+      "category": "vegetable",
+      "subCategory": "allium"
+    },
+    {
+      "slug": "cong",
+      "name": "小葱",
+      "category": "vegetable",
+      "subCategory": "allium"
+    },
+    {
+      "slug": "jiaobai",
+      "name": "茭白",
+      "category": "vegetable",
+      "subCategory": "stem"
+    },
+    {
+      "slug": "oujian",
+      "name": "藕尖",
+      "category": "vegetable",
+      "subCategory": "aquatic"
+    },
+    {
+      "slug": "qingjiao",
+      "name": "青椒",
+      "category": "vegetable",
+      "subCategory": "fruit-vegetable"
+    },
+    {
+      "slug": "huangpi",
+      "name": "黄皮",
+      "category": "fruit",
+      "subCategory": "tropical"
+    },
+    {
+      "slug": "fanliuzhi",
+      "name": "番石榴",
+      "category": "fruit",
+      "subCategory": "tropical"
+    },
+    {
+      "slug": "baixiangguo",
+      "name": "百香果",
+      "category": "fruit",
+      "subCategory": "tropical"
+    },
+    {
+      "slug": "yezi",
+      "name": "椰子",
+      "category": "fruit",
+      "subCategory": "tropical"
+    },
+    {
+      "slug": "shanzhu",
+      "name": "山竹",
+      "category": "fruit",
+      "subCategory": "tropical"
+    },
+    {
+      "slug": "renshenguo",
+      "name": "人参果",
+      "category": "fruit",
+      "subCategory": "tropical"
+    },
+    {
+      "slug": "shepiguo",
+      "name": "蛇皮果",
+      "category": "fruit",
+      "subCategory": "tropical"
+    },
+    {
+      "slug": "ganlan",
+      "name": "橄榄",
+      "category": "fruit",
+      "subCategory": "stone-fruit"
+    },
+    {
+      "slug": "qingmei",
+      "name": "青梅",
+      "category": "fruit",
+      "subCategory": "stone-fruit"
+    },
+    {
+      "slug": "nai",
+      "name": "奈李",
+      "category": "fruit",
+      "subCategory": "stone-fruit"
+    },
+    {
+      "slug": "heibulin",
+      "name": "黑布林",
+      "category": "fruit",
+      "subCategory": "stone-fruit"
+    },
+    {
+      "slug": "youtao",
+      "name": "油桃",
+      "category": "fruit",
+      "subCategory": "stone-fruit"
+    },
+    {
+      "slug": "hongsu",
+      "name": "红啤梨",
+      "category": "fruit",
+      "subCategory": "pome"
+    },
+    {
+      "slug": "haitangguo",
+      "name": "海棠果",
+      "category": "fruit",
+      "subCategory": "pome"
+    },
+    {
+      "slug": "shaguo",
+      "name": "沙果",
+      "category": "fruit",
+      "subCategory": "pome"
+    },
+    {
+      "slug": "huaishanli",
+      "name": "花红",
+      "category": "fruit",
+      "subCategory": "pome"
+    },
+    {
+      "slug": "youganzi",
+      "name": "余甘子",
+      "category": "fruit",
+      "subCategory": "berry"
+    },
+    {
+      "slug": "cili",
+      "name": "刺梨",
+      "category": "fruit",
+      "subCategory": "berry"
+    },
+    {
+      "slug": "shaji",
+      "name": "沙棘",
+      "category": "fruit",
+      "subCategory": "berry"
+    },
+    {
+      "slug": "gu-niangguo",
+      "name": "姑娘果",
+      "category": "fruit",
+      "subCategory": "berry"
+    },
+    {
+      "slug": "fupenzi",
+      "name": "覆盆子",
+      "category": "fruit",
+      "subCategory": "berry"
+    },
+    {
+      "slug": "heimei",
+      "name": "黑莓",
+      "category": "fruit",
+      "subCategory": "berry"
+    },
+    {
+      "slug": "man-yuemei",
+      "name": "蔓越莓",
+      "category": "fruit",
+      "subCategory": "berry"
+    },
+    {
+      "slug": "heicujili",
+      "name": "黑加仑",
+      "category": "fruit",
+      "subCategory": "berry"
+    },
+    {
+      "slug": "jinlingzi",
+      "name": "金铃子",
+      "category": "fruit",
+      "subCategory": "melon"
+    },
+    {
+      "slug": "xianggua",
+      "name": "香瓜",
+      "category": "fruit",
+      "subCategory": "melon"
+    },
+    {
+      "slug": "fo-shougan",
+      "name": "佛手柑",
+      "category": "fruit",
+      "subCategory": "citrus"
+    },
+    {
+      "slug": "qingjinju",
+      "name": "青金桔",
+      "category": "fruit",
+      "subCategory": "citrus"
+    },
+    {
+      "slug": "wogan",
+      "name": "沃柑",
+      "category": "fruit",
+      "subCategory": "citrus"
+    },
+    {
+      "slug": "chunjian",
+      "name": "春见",
+      "category": "fruit",
+      "subCategory": "citrus"
+    },
+    {
+      "slug": "qiyiguo",
+      "name": "奇异果",
+      "category": "fruit",
+      "subCategory": "berry"
+    },
+    {
+      "slug": "xuelianguo",
+      "name": "雪莲果",
+      "category": "fruit",
+      "subCategory": "tuber"
+    },
+    {
+      "slug": "caixin",
+      "name": "菜心",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "tonghao",
+      "name": "茼蒿",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "wawacai",
+      "name": "娃娃菜",
+      "category": "vegetable",
+      "subCategory": "cruciferous"
+    },
+    {
+      "slug": "zijinglan",
+      "name": "紫甘蓝",
+      "category": "vegetable",
+      "subCategory": "cruciferous"
+    },
+    {
+      "slug": "baozi-ganlan",
+      "name": "抱子甘蓝",
+      "category": "vegetable",
+      "subCategory": "cruciferous"
+    },
+    {
+      "slug": "pilan",
+      "name": "苤蓝",
+      "category": "vegetable",
+      "subCategory": "cruciferous"
+    },
+    {
+      "slug": "jie-cai",
+      "name": "芥菜",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "muer-cai",
+      "name": "木耳菜",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "zhimasai",
+      "name": "芝麻菜",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "luomashengcai",
+      "name": "罗马生菜",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "luokui",
+      "name": "落葵",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "hongxiancai",
+      "name": "红苋菜",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "naitangcai",
+      "name": "奶白菜",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    },
+    {
+      "slug": "wosun",
+      "name": "莴笋",
+      "category": "vegetable",
+      "subCategory": "stem"
+    },
+    {
+      "slug": "suanmiao",
+      "name": "蒜苗",
+      "category": "vegetable",
+      "subCategory": "allium"
+    },
+    {
+      "slug": "jiuhuang",
+      "name": "韭黄",
+      "category": "vegetable",
+      "subCategory": "allium"
+    },
+    {
+      "slug": "hudou",
+      "name": "胡豆",
+      "category": "vegetable",
+      "subCategory": "legume"
+    },
+    {
+      "slug": "biandou",
+      "name": "扁豆",
+      "category": "vegetable",
+      "subCategory": "legume"
+    },
+    {
+      "slug": "helandou",
+      "name": "荷兰豆",
+      "category": "vegetable",
+      "subCategory": "pod"
+    },
+    {
+      "slug": "wandoumiao",
+      "name": "豌豆苗",
+      "category": "vegetable",
+      "subCategory": "pod"
+    },
+    {
+      "slug": "daodou",
+      "name": "刀豆",
+      "category": "vegetable",
+      "subCategory": "pod"
+    },
+    {
+      "slug": "chayote-miao",
+      "name": "龙须菜",
+      "category": "vegetable",
+      "subCategory": "stem"
+    },
+    {
+      "slug": "baizhuo",
+      "name": "百合",
+      "category": "vegetable",
+      "subCategory": "tuber"
+    },
+    {
+      "slug": "yutou",
+      "name": "芋头",
+      "category": "vegetable",
+      "subCategory": "tuber"
+    },
+    {
+      "slug": "moyu",
+      "name": "魔芋",
+      "category": "vegetable",
+      "subCategory": "tuber"
+    },
+    {
+      "slug": "cigu",
+      "name": "慈姑",
+      "category": "vegetable",
+      "subCategory": "aquatic"
+    },
+    {
+      "slug": "shuiqincai",
+      "name": "水芹",
+      "category": "vegetable",
+      "subCategory": "aquatic"
+    },
+    {
+      "slug": "chuncai",
+      "name": "莼菜",
+      "category": "vegetable",
+      "subCategory": "aquatic"
+    },
+    {
+      "slug": "haidai",
+      "name": "海带",
+      "category": "vegetable",
+      "subCategory": "aquatic"
+    },
+    {
+      "slug": "zicai",
+      "name": "紫菜",
+      "category": "vegetable",
+      "subCategory": "aquatic"
+    },
+    {
+      "slug": "jiucaihua",
+      "name": "韭菜花",
+      "category": "vegetable",
+      "subCategory": "flower"
+    },
+    {
+      "slug": "nanhuateng",
+      "name": "南瓜花",
+      "category": "vegetable",
+      "subCategory": "flower"
+    },
+    {
+      "slug": "jizongjun",
+      "name": "鸡枞菌",
+      "category": "vegetable",
+      "subCategory": "mushroom"
+    },
+    {
+      "slug": "songrong",
+      "name": "松茸",
+      "category": "vegetable",
+      "subCategory": "mushroom"
+    },
+    {
+      "slug": "muer",
+      "name": "木耳",
+      "category": "vegetable",
+      "subCategory": "mushroom"
+    },
+    {
+      "slug": "zhusun",
+      "name": "竹荪",
+      "category": "vegetable",
+      "subCategory": "mushroom"
+    },
+    {
+      "slug": "chashugu",
+      "name": "茶树菇",
+      "category": "vegetable",
+      "subCategory": "mushroom"
+    },
+    {
+      "slug": "xingbaogu",
+      "name": "杏鲍菇",
+      "category": "vegetable",
+      "subCategory": "mushroom"
+    },
+    {
+      "slug": "koucai",
+      "name": "口蘑",
+      "category": "vegetable",
+      "subCategory": "mushroom"
+    },
+    {
+      "slug": "bawanghua",
+      "name": "霸王花",
+      "category": "vegetable",
+      "subCategory": "flower"
+    },
+    {
+      "slug": "tianqicai",
+      "name": "田七菜",
+      "category": "vegetable",
+      "subCategory": "herb"
+    },
+    {
+      "slug": "huoxiang",
+      "name": "藿香",
+      "category": "vegetable",
+      "subCategory": "herb"
+    },
+    {
+      "slug": "zijisu",
+      "name": "紫苏",
+      "category": "vegetable",
+      "subCategory": "herb"
+    },
+    {
+      "slug": "luole",
+      "name": "罗勒",
+      "category": "vegetable",
+      "subCategory": "herb"
+    },
+    {
+      "slug": "baimicai",
+      "name": "白米苋",
+      "category": "vegetable",
+      "subCategory": "leafy-green"
+    }
+  ],
+  "duplicateRealRefs": [],
+  "duplicateAiRefs": [],
+  "duplicatePreviewRefs": [],
+  "duplicateImageHashes": [],
+  "manualMismatches": [
+    {
+      "slug": "xiancai",
+      "name": "苋菜",
+      "status": "removed_from_display",
+      "note": "主体不清且疑似非苋菜实物。"
+    },
+    {
+      "slug": "bocai",
+      "name": "菠菜",
+      "status": "removed_from_display",
+      "note": "熟菜/菜品图，不是菠菜实物主体。"
+    },
+    {
+      "slug": "lianou",
+      "name": "莲藕",
+      "status": "removed_from_display",
+      "note": "餐桌菜品图，不适合作为莲藕实物图。"
+    },
+    {
+      "slug": "jiucai",
+      "name": "韭菜",
+      "status": "removed_from_display",
+      "note": "熟菜图，不是韭菜实物主体。"
+    },
+    {
+      "slug": "cong",
+      "name": "小葱",
+      "status": "removed_from_display",
+      "note": "图片主体为金针菇，不是小葱。"
+    },
+    {
+      "slug": "jiaobai",
+      "name": "茭白",
+      "status": "removed_from_display",
+      "note": "图片主体为彩椒/番茄，不是茭白。"
+    },
+    {
+      "slug": "oujian",
+      "name": "藕尖",
+      "status": "removed_from_display",
+      "note": "图片主体为粗短莲藕节，不是藕尖/藕带实物。"
+    },
+    {
+      "slug": "qingjiao",
+      "name": "青椒",
+      "status": "removed_from_display",
+      "note": "图片主体为红色甜椒，不是青椒。"
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}

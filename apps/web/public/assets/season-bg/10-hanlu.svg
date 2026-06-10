@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512" fill="none">
+  <defs>
+    <radialGradient id="s10-hanlu-svg-glow" cx="70%" cy="40%" r="52%">
+      <stop offset="0" stop-color="#E3C5A7" stop-opacity=".46"/>
+      <stop offset=".48" stop-color="#F5B65B" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#F8F0D8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="s10-hanlu-svg-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="s10-hanlu-svg-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".95" numOctaves="3" seed="30"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .08"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="s10-hanlu-svg-stroke" x1="460" y1="80" x2="930" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17243F" stop-opacity=".72"/>
+      <stop offset=".45" stop-color="#6CB3C7" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#C07DBB" stop-opacity=".54"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="512" fill="url(#s10-hanlu-svg-glow)" opacity=".86"/>
+  <g opacity=".98" transform="translate(-156 -54) scale(1.22)"><path d="M530 410 C610 376 704 382 772 420 C838 458 910 452 964 414" stroke="#E3C5A7" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+    <path d="M548 432 C628 408 712 414 788 444 C858 472 914 464 960 440" stroke="#8FE6BC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.28"/>
+      <path d="M622 158 C704 112 812 116 884 178" stroke="url(#s10-hanlu-svg-stroke)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.42"/>
+      <ellipse cx="760" cy="286" rx="76" ry="70" fill="#F08A72" opacity="0.72" />
+      <ellipse cx="764" cy="260" rx="54" ry="36" fill="#F5B65B" opacity="0.34" />
+      <g transform="translate(718 218) rotate(-30) scale(0.38)">
+    <path d="M0 0 C42 -42 88 -42 118 0 C83 30 40 34 0 0Z" fill="#7CCF95" opacity="0.5"/>
+    <path d="M10 -1 C44 0 75 0 110 0" stroke="#17243F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.34"/>
+  </g><g transform="translate(790 216) rotate(28) scale(0.36)">
+    <path d="M0 0 C42 -42 88 -42 118 0 C83 30 40 34 0 0Z" fill="#8FE6BC" opacity="0.5"/>
+    <path d="M10 -1 C44 0 75 0 110 0" stroke="#17243F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.34"/>
+  </g>
+      <path d="M604 118 C652 86 718 80 780 108" stroke="#C07DBB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.28"/></g>
+  <rect width="1024" height="512" filter="url(#s10-hanlu-svg-grain)" opacity=".58"/>
+</svg>
