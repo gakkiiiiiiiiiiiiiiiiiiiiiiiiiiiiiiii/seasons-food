@@ -1,0 +1,4 @@
+# WeChat Cloud Run local secrets
+.wxcloud.env
+.wxcloud.env.local
+.wxcloud-data-tmp/

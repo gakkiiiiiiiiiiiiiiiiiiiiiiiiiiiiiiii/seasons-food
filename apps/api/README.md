@@ -9,6 +9,33 @@ npm run db:seed --workspace @inseason/api
 npm run dev --workspace @inseason/api
 ```
 
+## WeChat Cloud Run / 微信云托管
+
+Cloud Run files live in this backend directory:
+
+- `Dockerfile`
+- `wxcloud.config.cjs`
+- `.wxcloud.env` for local deployment secrets, not committed
+
+Before deploying, fill real values in `apps/api/.wxcloud.env`, especially:
+
+- `WX_CLOUD_ENV_ID`
+- `WX_CLOUD_SERVICE_NAME`
+- `WX_CLOUD_PORT`
+- `WX_CLOUD_REGION`
+
+Then deploy from `apps/api`:
+
+```bash
+set -a
+source .wxcloud.env
+set +a
+wxcloud login
+wxcloud deploy -e "$WX_CLOUD_ENV_ID" -s "$WX_CLOUD_SERVICE_NAME" -p "$WX_CLOUD_PORT"
+```
+
+The Docker image seeds `db/inseason.sqlite` during image build from the committed seed JSON files.
+
 ### Data enrichment
 
 USDA FoodData Central is used for nutrition candidates. The script writes a

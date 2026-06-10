@@ -1,0 +1,12 @@
+.wxcloud.env
+.wxcloud.env.local
+.wxcloud-data-tmp/
+db/
+generated/
+node_modules/
+npm-debug.log*
+
+data/audit-sheets/
+data/*contact-sheet*.jpg
+data/*candidates*.json
+data/*candidates*.txt
