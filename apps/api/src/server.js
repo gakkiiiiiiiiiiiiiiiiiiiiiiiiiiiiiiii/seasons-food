@@ -6,12 +6,22 @@ import { getProduceBySlug, getSeasonSummary, listProduce } from './repository.js
 const app = express()
 const db = openDatabase()
 const port = Number(process.env.PORT || 3001)
+const host = process.env.HOST || '0.0.0.0'
 
 app.use(cors())
 app.use(express.json())
 
 app.get('/health', (_req, res) => {
   res.json({ ok: true, service: 'inseason-api' })
+})
+
+app.get('/', (_req, res) => {
+  res.json({ ok: true, service: 'inseason-api' })
+})
+
+app.get('/api/count', (_req, res) => {
+  const produceCount = db.prepare('SELECT COUNT(*) AS count FROM produce').get().count
+  res.json({ count: produceCount })
 })
 
 app.get('/api/produce', (req, res) => {
@@ -40,6 +50,6 @@ app.get('/api/seasons/:month', (req, res) => {
   res.json(getSeasonSummary(db, month))
 })
 
-app.listen(port, () => {
-  console.log(`InSeason API listening on http://localhost:${port}`)
+app.listen(port, host, () => {
+  console.log(`InSeason API listening on http://${host}:${port}`)
 })

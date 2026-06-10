@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Uni from '@dcloudio/vite-plugin-uni'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    Uni()
+  ],
   server: {
     proxy: {
       '/api': 'http://localhost:3001'

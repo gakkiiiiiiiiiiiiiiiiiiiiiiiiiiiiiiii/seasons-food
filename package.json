@@ -9,6 +9,8 @@
     "dev:web": "npm run dev --workspace @inseason/web",
     "dev:api": "npm run dev --workspace @inseason/api",
     "build": "npm run build --workspace @inseason/web",
+    "build:mp-weixin": "npm run build:mp-weixin --workspace @inseason/web",
+    "build:h5": "npm run build:h5 --workspace @inseason/web",
     "db:seed": "npm run db:seed --workspace @inseason/api",
     "data:crawl": "npm run data:crawl --workspace @inseason/api",
     "data:validate": "npm run data:validate --workspace @inseason/api",

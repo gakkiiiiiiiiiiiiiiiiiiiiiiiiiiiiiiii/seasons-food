@@ -1,0 +1,30 @@
+{
+  "name": "当季吃什么",
+  "appid": "__UNI__INSEASON",
+  "description": "按月份、地区和营养维度浏览当季果蔬",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true
+    },
+    "usingComponents": true
+  },
+  "h5": {
+    "router": {
+      "mode": "hash"
+    },
+    "devServer": {
+      "proxy": {
+        "/api": {
+          "target": "http://localhost:3001",
+          "changeOrigin": true
+        }
+      }
+    }
+  }
+}

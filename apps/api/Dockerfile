@@ -7,12 +7,12 @@ RUN npm install
 FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
-ENV PORT=3001
+ENV PORT=3000
 RUN apk add --no-cache libstdc++
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run db:seed
 
-EXPOSE 3001
+EXPOSE 3000
 CMD ["npm", "start"]
