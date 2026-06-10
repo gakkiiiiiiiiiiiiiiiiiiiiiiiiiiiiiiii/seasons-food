@@ -15,6 +15,15 @@ wxcloud logout
 
 Most commands require login. CLI keys are generated in the WeChat Cloud Run console settings.
 
+The generated `.wxcloud.env` is intentionally CLI-only:
+
+```bash
+WX_CLOUD_APP_ID=
+WX_CLOUD_PRIVATE_KEY=
+```
+
+Pass deployment and storage targets such as environment ID, service name, port, and region directly to the command that needs them.
+
 ## Project Setup
 
 `wxcloud migrate` can identify supported frameworks and generate `Dockerfile` plus `wxcloud.config.js`.

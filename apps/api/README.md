@@ -15,14 +15,12 @@ Cloud Run files live in this backend directory:
 
 - `Dockerfile`
 - `wxcloud.config.cjs`
-- `.wxcloud.env` for local deployment secrets, not committed
+- `.wxcloud.env` for local CLI login secrets, not committed
 
-Before deploying, fill real values in `apps/api/.wxcloud.env`, especially:
+Before deploying, fill real values in `apps/api/.wxcloud.env`:
 
-- `WX_CLOUD_ENV_ID`
-- `WX_CLOUD_SERVICE_NAME`
-- `WX_CLOUD_PORT`
-- `WX_CLOUD_REGION`
+- `WX_CLOUD_APP_ID`
+- `WX_CLOUD_PRIVATE_KEY`
 
 Then deploy from `apps/api`:
 
@@ -30,11 +28,18 @@ Then deploy from `apps/api`:
 set -a
 source .wxcloud.env
 set +a
-wxcloud login
-wxcloud deploy -e "$WX_CLOUD_ENV_ID" -s "$WX_CLOUD_SERVICE_NAME" -p "$WX_CLOUD_PORT"
+wxcloud login --appId "$WX_CLOUD_APP_ID" --privateKey "$WX_CLOUD_PRIVATE_KEY"
+wxcloud deploy -e <env-id> -s <service-name> -p 3001
 ```
 
 The Docker image seeds `db/inseason.sqlite` during image build from the committed seed JSON files.
+
+Object storage uses the same CLI login. Pass the target environment and region to the command:
+
+```bash
+wxcloud storage:upload ../web/public/assets --envId <env-id> --mode storage --remotePath /assets --region ap-shanghai --concurrency 8
+wxcloud storage:list /assets --envId <env-id> --mode storage --region ap-shanghai --json
+```
 
 ### Data enrichment
 

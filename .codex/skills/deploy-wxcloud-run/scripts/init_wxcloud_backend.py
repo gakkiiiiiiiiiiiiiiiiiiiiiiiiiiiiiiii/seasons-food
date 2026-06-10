@@ -5,25 +5,9 @@ from pathlib import Path
 
 
 ENV_TEMPLATE = """# WeChat Cloud Run / 微信云托管
-WX_CLOUD_ENV_ID=
-WX_CLOUD_SERVICE_NAME=
-WX_CLOUD_PORT={port}
-WX_CLOUD_REGION=ap-shanghai
+# Used only for non-interactive wxcloud CLI login.
 WX_CLOUD_APP_ID=
 WX_CLOUD_PRIVATE_KEY=
-
-# Tencent CloudBase / 云开发资源
-TCB_ENV_ID=
-TCB_SECRET_ID=
-TCB_SECRET_KEY=
-TCB_REGION=ap-shanghai
-
-# Cloud database / 云数据库
-TCB_DATABASE_COLLECTION=
-
-# Object storage / 对象存储
-TCB_STORAGE_BUCKET=
-TCB_STORAGE_PREFIX=
 """
 
 
@@ -194,7 +178,7 @@ def main() -> None:
     write_wxcloud_config(project, args.port)
 
     print(f"Initialized WeChat Cloud Run files in {project}")
-    print("Review .wxcloud.env and fill real secret/resource values before deploy or data operations.")
+    print("Review .wxcloud.env and fill WX_CLOUD_APP_ID plus WX_CLOUD_PRIVATE_KEY before non-interactive CLI login.")
 
 
 if __name__ == "__main__":

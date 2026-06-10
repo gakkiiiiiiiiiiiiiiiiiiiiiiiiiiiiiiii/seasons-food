@@ -8,7 +8,7 @@ DATA_SCRIPT = r'''#!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
-import cloudbase from "@cloudbase/node-sdk";
+import { spawn } from "node:child_process";
 
 function loadEnv(file) {
   if (!fs.existsSync(file)) return;
@@ -50,84 +50,84 @@ function requireValue(args, key) {
   return args[key];
 }
 
-function parseJsonArg(args) {
-  const raw = requireValue(args, "json");
-  return JSON.parse(raw);
+function runWxcloud(argv) {
+  return new Promise((resolve, reject) => {
+    const child = spawn("wxcloud", argv, { stdio: "inherit" });
+    child.on("error", reject);
+    child.on("close", (code) => {
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(new Error(`wxcloud exited with code ${code}`));
+      }
+    });
+  });
 }
 
-function createApp() {
-  const env = process.env.TCB_ENV_ID || process.env.WX_CLOUD_ENV_ID;
-  if (!env) throw new Error("Missing TCB_ENV_ID or WX_CLOUD_ENV_ID in .wxcloud.env");
-  const config = { env };
-  if (process.env.TCB_SECRET_ID && process.env.TCB_SECRET_KEY) {
-    config.secretId = process.env.TCB_SECRET_ID;
-    config.secretKey = process.env.TCB_SECRET_KEY;
-  }
-  return cloudbase.init(config);
+function envId(args) {
+  return args.envId || args.env;
 }
 
-function collectionName(args) {
-  return args.collection || process.env.TCB_DATABASE_COLLECTION;
+function region(args) {
+  return args.region || "ap-shanghai";
 }
 
-async function runDb(app, command, args) {
-  const db = app.database();
-  const name = collectionName(args);
-  if (!name) throw new Error("Missing --collection or TCB_DATABASE_COLLECTION");
-  const collection = db.collection(name);
-  if (command === "db:list") {
-    const limit = Number(args.limit || 20);
-    const result = await collection.limit(limit).get();
-    console.log(JSON.stringify(result, null, 2));
-    return;
-  }
-  if (command === "db:get") {
-    const result = await collection.doc(requireValue(args, "id")).get();
-    console.log(JSON.stringify(result, null, 2));
-    return;
-  }
-  if (command === "db:add") {
-    const result = await collection.add(parseJsonArg(args));
-    console.log(JSON.stringify(result, null, 2));
-    return;
-  }
-  if (command === "db:update") {
-    const result = await collection.doc(requireValue(args, "id")).update(parseJsonArg(args));
-    console.log(JSON.stringify(result, null, 2));
-    return;
-  }
-  if (command === "db:delete") {
-    const result = await collection.doc(requireValue(args, "id")).remove();
-    console.log(JSON.stringify(result, null, 2));
-    return;
-  }
-  throw new Error(`Unsupported database command: ${command}`);
+function requireEnvId(args) {
+  const value = envId(args);
+  if (!value) throw new Error("Missing --envId");
+  return value;
 }
 
-async function runStorage(app, command, args) {
-  const storage = app.storage();
-  const prefix = process.env.TCB_STORAGE_PREFIX || "";
-  const remote = args.remote ? path.posix.join(prefix, args.remote).replace(/^\/+/, "") : "";
+async function login() {
+  if (!process.env.WX_CLOUD_APP_ID) throw new Error("Missing WX_CLOUD_APP_ID in .wxcloud.env");
+  if (!process.env.WX_CLOUD_PRIVATE_KEY) throw new Error("Missing WX_CLOUD_PRIVATE_KEY in .wxcloud.env");
+  await runWxcloud(["login", "--appId", process.env.WX_CLOUD_APP_ID, "--privateKey", process.env.WX_CLOUD_PRIVATE_KEY]);
+}
+
+async function runStorage(command, args) {
+  const id = requireEnvId(args);
   if (command === "storage:upload") {
     const local = requireValue(args, "local");
-    const result = await storage.uploadFile({
-      cloudPath: remote || path.basename(local),
-      fileContent: fs.createReadStream(local),
-    });
-    console.log(JSON.stringify(result, null, 2));
+    const remote = args.remote || args.remotePath || `/${path.basename(local)}`;
+    const argv = [
+      "storage:upload",
+      local,
+      "--envId",
+      id,
+      "--mode",
+      "storage",
+      "--remotePath",
+      remote,
+      "--region",
+      region(args),
+    ];
+    if (args.concurrency) argv.push("--concurrency", args.concurrency);
+    await runWxcloud(argv);
     return;
   }
-  if (command === "storage:download") {
-    const local = requireValue(args, "local");
-    const result = await storage.downloadFile({ fileID: requireValue(args, "remote") });
-    fs.mkdirSync(path.dirname(local), { recursive: true });
-    fs.writeFileSync(local, result.fileContent);
-    console.log(JSON.stringify({ local }, null, 2));
+  if (command === "storage:list") {
+    const prefix = args.prefix || args.remote || "/";
+    const argv = ["storage:list", prefix, "--envId", id, "--mode", "storage", "--region", region(args)];
+    if (args.json) argv.push("--json");
+    await runWxcloud(argv);
     return;
   }
   if (command === "storage:delete") {
-    const result = await storage.deleteFile({ fileList: [requireValue(args, "remote")] });
-    console.log(JSON.stringify(result, null, 2));
+    const argv = ["storage:delete", "--envId", id, "--mode", "storage", "--region", region(args)];
+    if (args.object || args.remote) {
+      for (const item of String(args.object || args.remote).split(",").filter(Boolean)) {
+        argv.push("-o", item);
+      }
+    } else if (args.prefix) {
+      argv.push("-p", args.prefix);
+    } else {
+      throw new Error("Missing --object, --remote, or --prefix");
+    }
+    await runWxcloud(argv);
+    return;
+  }
+  if (command === "storage:purge") {
+    await runWxcloud(["storage:purge", "--envId", id, "--region", region(args)]);
     return;
   }
   throw new Error(`Unsupported storage command: ${command}`);
@@ -138,14 +138,19 @@ async function main() {
   const args = parseArgs(process.argv.slice(2));
   const command = args._[0];
   if (!command) {
-    console.error("Usage: node scripts/wxcloud-data.mjs <db:list|db:get|db:add|db:update|db:delete|storage:upload|storage:download|storage:delete> [options]");
+    console.error("Usage: node scripts/wxcloud-data.mjs <login|env:list|storage:upload|storage:list|storage:delete|storage:purge> [options]");
     process.exit(2);
   }
-  const app = createApp();
-  if (command.startsWith("db:")) {
-    await runDb(app, command, args);
+  if (command === "login") {
+    await login();
+  } else if (command === "env:list") {
+    const argv = ["env:list", "--region", region(args)];
+    if (args.json) argv.push("--json");
+    await runWxcloud(argv);
   } else if (command.startsWith("storage:")) {
-    await runStorage(app, command, args);
+    await runStorage(command, args);
+  } else if (command.startsWith("db:")) {
+    throw new Error("Database commands are not available in the CLI-only helper. Use the WeChat console or add an explicit database SDK setup.");
   } else {
     throw new Error(`Unsupported command: ${command}`);
   }
@@ -170,7 +175,7 @@ def update_package_json(project: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Install env-driven CloudBase database/storage helper script.")
+    parser = argparse.ArgumentParser(description="Install wxcloud CLI helper script.")
     parser.add_argument("--project", required=True, help="Backend project directory.")
     args = parser.parse_args()
     project = Path(args.project).expanduser().resolve()
@@ -185,7 +190,7 @@ def main() -> None:
     target.chmod(0o755)
     update_package_json(project)
     print(f"Installed {target}")
-    print("Install @cloudbase/node-sdk in the backend project before running data operations.")
+    print("No extra npm dependency is required. The helper shells out to the wxcloud CLI.")
 
 
 if __name__ == "__main__":
